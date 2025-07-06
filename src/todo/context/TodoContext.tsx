@@ -3,6 +3,8 @@
 import { createContext } from "react";
 import { Todo, TodoState } from "../interfaces/interfaces";
 
+//Provedor es usado para comparti información en los componentes hijos
+
 //Crear provedor de informacion
 // export const TodoContext = () => createContext({
 //     // todoState: {

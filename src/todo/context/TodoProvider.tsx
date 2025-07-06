@@ -27,6 +27,7 @@ interface props {
     children: JSX.Element | JSX.Element[]
 }
 
+//High order component, recibe los hijos que seran renderizados
 export const TodoProvider = ({children}: props) => {
   
   const [todoState, dispach] = useReducer(todoReducer, INITIAL_STATE)
