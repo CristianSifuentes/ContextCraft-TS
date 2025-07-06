@@ -1,18 +1,18 @@
 //rafc
 //useReducer is a hook from react
 
+import { Title } from "./components/Title";
+import { TodoList } from "./components/TodoList"
 import { TodoProvider } from "./context/TodoProvider"
+import { useTodos } from "./hooks/useTodos";
 
 export const Todo = () => {
+
+  // const { toggleTodo } = useTodos();
   return (
     <TodoProvider>
-      <h1>Todo: </h1>
-      <ul>
-        <li>TODO 1</li>
-        <li>TODO 2</li>
-        <li>TODO 3</li>
-
-      </ul>
+      <Title></Title>
+      <TodoList></TodoList>
     </TodoProvider>
   )
 }

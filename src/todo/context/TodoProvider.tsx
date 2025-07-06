@@ -14,7 +14,7 @@ const INITIAL_STATE: TodoState = {
         completed: false
     }, {
         id: '2',
-        desc: 'Pirdra del alma',
+        desc: 'Piedra del alma',
         completed: false
     }],
     completed: 0,
@@ -30,11 +30,16 @@ interface props {
 //High order component, recibe los hijos que seran renderizados
 export const TodoProvider = ({children}: props) => {
   
-  const [todoState, dispach] = useReducer(todoReducer, INITIAL_STATE)
+  const [todoState, dispach] = useReducer(todoReducer, INITIAL_STATE);
+
+  const toggleTodo = ( id: string) => {
+    dispach({type: 'toggleTodo', payload: { id }})
+  }
   
   return (
     <TodoContext.Provider value={{
-        todoState
+        todoState,
+        toggleTodo
     }}>
         {
             children
